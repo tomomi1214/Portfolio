@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>portfolio</title>
+        <style>
+            .square{
+  background-color: #1fc3cd;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+        </style>   
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="square" id="elem"></div>
+          </div>
+          <script src="anime.min.js"></script>
+          <script>
+              var elem = document.getElementById('elem');
+elem.addEventListener('click',function(){
+  anime({
+    targets: elem,
+    translateX: 250
+  })
+})
+          </script>
+    </body>
+</html>        
