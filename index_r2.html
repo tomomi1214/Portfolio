@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="jquery-3.5.1.min.js"></script>
+        <script src="anime.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="name">
+            <header id="nav">            
+                <ul>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#skills">Skills</a></li>                    
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </header>
+            <h1>AAAAAAAAA</h1>
+
+        </div>            
+        <div class="wrap">
+            <div class="circle" id="elem"></div>
+            <p id="page-top"><a href="#wrap">Back to Top</a></p>
+        </div>
+
+        <div id="profile" class="clearfix">
+            <h2>Profile</h2>
+            <img class="left" src="images/profile.png" alt="profile pic" />
+            <p>
+                About me...............<br>
+                about me
+            </p>
+        </div>
+            
+            
+        <div class="circle2" class="clearfix">
+            <div class="circle2-left"></div>
+            <div class="circle2-middle" id="elem2"></div>
+            <div class="circle2-right" id="elem2.5"></div>
+        </div>
+        <div id="skills" class="clearfix">
+            <h2>Skills</h2>
+                <div class="pic">
+                    <img src="images/html.JPG" alt="html" class="image-vw"/>
+                    <img src="images/css.JPG" alt="css"  class="image-vw"/>
+                    <img src="images/js.JPG" alt="js"  class="image-vw"/>
+                </div>
+        </div>
+        
+        <div id="works">
+            <h2>Works</h2>
+            <div class="w-pic">
+                <img src="images/work.JPG" alt="work" class="image-vw-2" />
+                <p>Coming Soon</p>
+                <img src="images/work.JPG" alt="work" class="image-vw-2" />
+                <p>Coming Soon</p>
+                <img src="images/work.JPG" alt="work" class="image-vw-2" />
+                <p>Coming Soon</p>
+            </div>
+        </div>
+        
+        <div id="contact" class="clearfix">
+            <h2>Contact</h2>
+            <div class="btn">
+                <button type="button" class="contact-btn" onclick="location.href='contact.html'">Click here!</button>
+            </div>
+        </div>
+        
+        <script>
+            //ヘッダーを固定する
+           /* var _wondow = $(window),
+                _header =$('#nav'),
+                nemeBottom;
+            
+            _wondow.on('scroll', function() {
+                nameBottom =$('#name').height();
+                if(_window.scrollTop() > nameBottom){
+                    _header.addClass('fixed');
+                }else{
+                    _header.removeClass('fixed');
+                }
+            });*/
+
+
+            //スクロールしてTopボタンを表示
+            $(function(){
+                var topbtn = $('#page-top');
+                topbtn.hide();
+                //スクロースするとボタンを表示
+                $(window).scroll(function(){
+                    if($(this).scrollTop() > 50){
+                        topbtn.fadeIn();
+                    }else {
+                        topbtn.fadeOut();
+                    }
+                });
+                //スクロールしてストップ
+                topbtn.click(function(){
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 500);
+                    return false;
+                });
+            });    
+            
+           //H１が表示される
+            $(function(){
+                var h1 = $('h1');
+                var txt_array=h1.text().split('');
+                $('h1').html('');
+
+                $.each(txt_array, function(index, element){
+                    var new_element = $("<span/>").text(element).css({opacity:0});
+                    h1.append(new_element);
+                    new_element.delay(index * 100);
+                    new_element.animate({opacity: 1}, 3000);
+                });
+            });
+            
+            //スクロールしてボールが転がる
+           var elem = document.getElementById('elem');
+            window.addEventListener('scroll',() => {
+                
+                let scrollTop = document.scrollingElement.scrollTop;
+                anime({
+                    targets: elem,
+                    translateX: scrollTop,
+                    duration: 2000,
+                    loop: false
+                 });
+            }, true);
+            
+           //スクロールしてポールが伸びる
+           var elem2 = document.getElementById('elem2');
+            window.addEventListener('scroll',() => {
+                
+            let scrollTop2 = document.scrollingElement.scrollTop;
+                anime({
+                    targets: elem2,
+                    width: 400,
+                    duration: 8000,
+                    loop: false
+                 });
+            }, true);
+            
+            
+            //問い合わせボタン
+            $('[type="button').click(() => {
+                    
+            });
+        </script>
+    </body>
+</html>

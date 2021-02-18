@@ -117,6 +117,27 @@
                 position: absolute;
                 text-align: center;
             }
+            #page-top {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                font-size: 77%;
+            }
+            
+            #page-top a {
+                background: #666;
+                text-decoration: none;
+                color: #fff;
+                padding: 30px 0;
+                text-align: center;
+                display: block;
+                border-radius: 5px;
+            }
+            
+            #page-top a:hover{
+                text-decoration: none;
+                background: #999;
+            }
 
             #footer {
                 background-color: silver;
@@ -141,8 +162,10 @@
         <div id="name">
             <h1>AAAAAAAAA</h1>
         </div>
-        <div class="wrapper">
+        <div class="wrap">
             <div class="circle" id="elem"></div>
+            <p id="page-top"><a href="#wrap">Page TOP</a></p>
+
         </div>
 
         <div id="profile">
@@ -188,12 +211,41 @@
         
             </div>
         </div>
-        
         <div id="footer">
         </div>
 
         <script>
-        //ここにまとめる
+            //スクロールしてTopボタンを表示
+            $(function(){
+                var showFlag = false;
+                var topbtn = $('#page-top');
+                topbtn.css('buttom','-100px');
+                var showFlag = false;
+                
+                //スクロースするとボタンを表示
+                $(window).scroll(function(){
+                    if($(this).scrollTop() > 100){
+                        if(showFlag == false){
+                            showFlag = true;
+                            topbtn.stop().animate({'buttom' : '20px'}, 200);
+                        }
+                    }else {
+                        if(showFlag){
+                            showFlag = false;
+                            topbtn.stop().animate({'buttom' : '-100px'}, 200);
+                        }
+                    }
+                });
+                //スクロールしてストップ
+                topbtn.click(function(){
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 500);
+                    return false;
+                });
+            });    
+            
+           //H１が表示される
             $(function(){
                 var h1 = $('h1');
                 var txt_array=h1.text().split('');
@@ -207,15 +259,17 @@
                 });
             });
             
+            //ボールが転がる
             var elem = document.getElementById('elem');
             elem.addEventListener('click',function(){
                 anime({
                     targets: elem,
                     translateX: 250,
                     duration: 3000,
+                    loop: true
                  });
             });
-    
+            //問い合わせボタン
             $('[type="button').click(() => {
                     
             });

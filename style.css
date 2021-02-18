@@ -1,0 +1,339 @@
+.site-header {
+    background: #fff;
+    display: flex;
+    padding: 20px;
+    position: absolute;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.site-heafer.fixed {
+    position: fixed;
+    top: 0;
+}
+
+.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+}
+
+#nav {
+    width: 100%;
+}
+#nav ul {
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+#nav ul li {
+    width: 8%;
+    text-align: center;
+    margin-left: 6px;
+    margin-right: 6px;
+    transition: all .8s;
+}
+#nav ul li a {
+    height: 30px;
+    margin: 20px;
+    padding: 10px;
+    color: darkgray;
+    font-size: 12px;
+    text-decoration: none;
+}
+#nav ul li a:hover{
+    background-color: darksalmon;
+    color: white;
+}            
+#name{
+    width: auto;
+    height: 200px;
+    overflow: hidden;
+}
+h1 {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+} 
+
+
+.wrap {
+    text-align: center;
+}
+
+.circle{
+    margin-top: 150px;
+    background-color: violet;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.circle2 {
+    position:absolute;
+}
+.circle2-left{
+    display: inline-block;
+    background-color: #C2EEFF;
+    width: 20px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0;
+}
+.circle2-middle{
+    display: inline-block;
+    background-color: #FFBEDA;
+    width: 60px;
+    height: 40px;
+    margin-left: -15px;
+}
+.circle2-right{
+    display: inline-block;
+    margin-left: -15px;
+    background-color: #BAD3FF;
+    width: 20px;
+    height: 40px;
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+.skills {
+    margin-top: 200px;
+}
+.works{
+    margin-top: 30px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+h2{
+    padding: 30px;
+    margin-left: 250px;
+    /*margin-top: 100px;*/
+    color: darkgrey;
+    font-size: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    clear:left;
+}
+.left{
+    margin-left: 468px;
+    width: auto;
+    height: auto;
+    float: left;
+    text-align: center;
+}
+
+.pic {
+    display: block;
+    text-align: center; 
+    padding: 30px;               
+}
+.image-vw{
+    width: 5vw;
+    padding: 20px;
+    display: inline-block;
+}
+.w-pic {
+    position: relative;
+    display: block;
+    text-align: center; 
+    padding: 30px;
+    /*overflow: visible;*/               
+}
+
+.image-vw-2{
+    width: 20vw;
+    padding: 20px;
+    display: inline-block;
+}
+.w-pic img {
+    display: inline-block;
+    transition-duration: 0.5s;
+}
+.w-pic img:hover{
+    transform: scale(1.2,1.2);
+    transition-duration: 0.5s;
+}
+
+.w-pic p{
+    position: absolute;
+    color: black;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+}
+.contact {
+    position: absolute;
+    text-align: center;
+}
+#page-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#page-top a {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    padding: 38px 0;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #99CCFF;
+    border: none;
+
+}
+
+#page-top a:hover{
+    text-decoration: none;
+    border: solid 0.5px #99CCFF;
+    background: white;
+
+}
+
+.btn
+{
+    text-align: center;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.contact-btn {
+    font-size: 17px;
+    display: inline-block;
+    padding: 1em 4em;
+    color: darkgray;
+    border: solid 2px #064E0F;
+    border-radius: 50px;
+    transition: .4s;
+    background: white;
+}
+
+.contact-btn:hover{
+    background: #064E0F;
+    color:white;
+}
+
+/*Contact Page*/
+form {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.item {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.label {
+    float: left;
+    margin-right: 20px;
+    width: 160px;
+    border-left: solid 3px #FF0461;
+    padding-left: 10px;
+}
+
+.input {
+    float: left;
+    width: 350px;
+    padding-left: 20px;
+}
+
+input[type="text"], input[type="email"] {
+    border: solid 1px #aaa;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+}
+textarea {
+    border: solid 1px #aaa;
+    border-radius: 5px;
+    padding: 10px;
+    height: 160px;
+    font-size: 15px;
+}
+
+/*問い合わせ送信ボタン*/
+.sent { 
+    font-size: 15px;
+    display: inline-block;
+    padding: 0.7em 2em;
+    color: black;
+    border: solid 1px #FF367F;
+    border-radius: 50px;
+    transition: .4s;
+    background: white;
+}
+
+.sent:hover{
+    background: #FF367F;
+    color:white;
+}
+
+
+/*Go to Top page*/
+.btn-2 {
+    text-align: left;
+    margin: 50px;
+}
+
+.btn-to-top {
+    font-size: 15px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: black;  
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-top: 1em;
+}
+
+.btn-to-top:before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 4px;
+    top:100%;
+    left: 0;
+    border-radius: 3px;
+    background:#FF69B4;
+    transition: .2s;
+}
+
+.btn-to-top:hover:before{
+    top: -webkit-calc(100% - 3px);
+    top: calc(100% - 3px);
+}
+
+
+
+/*
+#footer {
+    background-color: silver;
+    height: 50px;
+    margin-top: auto;
+}
+*/

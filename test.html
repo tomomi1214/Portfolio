@@ -2,30 +2,44 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>portfolio</title>
+        <title>test</title>
         <style>
-            .square{
-  background-color: #1fc3cd;
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
+.scale-bg {
+    background: url(bg.jpg) no-repeat top center;
+    background-size: 100%;
+    position: fixed;
+    width: 100%;
+    padding-bottom: 400px;
 }
-
+h1 {
+    position: absolute;
+    top: 272px;
+}
+.contents {
+    position: relative;
+    top: 400px;
+    padding: 60px 0;
+}
         </style>   
+        <script src="jquery-3.5.1.min.js"></script>
     </head>
+    
     <body>
-        <div class="wrapper">
-            <div class="square" id="elem"></div>
-          </div>
-          <script src="anime.min.js"></script>
-          <script>
-              var elem = document.getElementById('elem');
-elem.addEventListener('click',function(){
-  anime({
-    targets: elem,
-    translateX: 250
-  })
-})
-          </script>
-    </body>
+    <div class="scale-bg"></div>
+<h1>Title</h1>
+<div class="contents">
+・・・
+</div>
+<script>
+$(function() {
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        $('.scale-bg').css({
+            backgroundSize: (100 + scroll/3)  + "%",
+            top: -(scroll/10)  + "%"
+        });
+    });
+});
+</script>
+</body>
 </html>        
