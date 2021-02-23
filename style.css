@@ -1,3 +1,4 @@
+
 .site-header {
     background: #fff;
     display: flex;
@@ -20,8 +21,16 @@
     width: 100%;
 }
 
+html, body {
+    margin: 0;
+    font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+
+/*nav設定*/
+}
 #nav {
+    background: rgb(255, 219, 201, 0.5);
     width: 100%;
+    position: fixed;
 }
 #nav ul {
     padding-left: 0;
@@ -41,42 +50,105 @@
     margin: 20px;
     padding: 10px;
     color: darkgray;
-    font-size: 12px;
+    font-size: 14px;
     text-decoration: none;
 }
 #nav ul li a:hover{
     background-color: darksalmon;
     color: white;
-}            
+}  
+
+/*nameの表示*/
 #name{
     width: auto;
     height: 200px;
     overflow: hidden;
 }
+
 h1 {
-    margin-top: 100px;
+    margin: 100px;
+    margin-top: 160px;
     text-align: center;
     font-size: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 
 } 
 
-
+/*animation 1*/
 .wrap {
     text-align: center;
 }
 
 .circle{
     margin-top: 150px;
-    background-color: violet;
+    background-color: #FFBEDA;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
 }
+.circle.hide {
+  animation: hideop 1s linear 0s;
+  animation-fill-mode: forwards;
+}
 
+/*各コンテンツのフォント*/
+h2{
+    margin-top: px;
+    padding-top: 40px;
+    margin-left: 250px;
+    color: darkgrey;
+    font-size: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    clear:left;
+}
+.clearfix {
+    zoom: 1;
+}
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/*Profile*/
+.content {
+    float: left;
+    margin-left: 100px;
+}
+.left{
+    float: left;
+    margin-left: 300px;
+    margin-top: 30px;
+    max-width: 130px;
+    max-height: 130px;
+    padding-right: 20px;
+}
+.body {
+    float: left;
+    padding-left: 20px;
+    vertical-align: central;
+    width: 50%;
+    
+}
+.policy {
+    margin-top: 150px;
+    margin-left: 350px;
+    padding-top: 100px;
+}
+.policy p:first-child {
+    margin-left: 50px;
+    font-size: 23px;
+    color: darkgray;        
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+/*animation 2*/
 .circle2 {
     position:absolute;
+    margin-top: 10px;
 }
 .circle2-left{
     display: inline-block;
@@ -103,55 +175,168 @@ h1 {
     border-radius: 50%;
 }
 
-.skills {
-    margin-top: 200px;
+/*Skill*/
+#skills {
+    padding-top: 40px;
 }
-.works{
+.s-paragraph {
+    margin-left: 380px;
+}
+.pic {
+    text-align: center; 
+    padding-top: 20px;
+}
+.image-vw{
+    padding-top:4px;
+    width: 6vw;
+    padding-left: 10px;
+    display: inline-block;
+}
+.pic-2 {
+    text-align: center; 
+    padding-top: 30px;
+}
+
+/*Graph for html*/
+.html-rate{
+    display: inline-block;
+    margin-left: 80px;
+    margin-top: 30px;
+    background-color: #BAD3FF;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.fadein {
+    opacity: 0;
+    animation: fadein 6s ease forwards;
+}
+@keyframes fadein {
+    100% {  opacity: 1;}
+}
+
+.html-rate-parent {
+    display: inline-block;
+    animation-delay: 4s;
+}
+.html-rate-left{
+    display: inline-block;
+    background-color: #BAD3FF;
+    width: 20px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 300px;
+}
+.html-rate-middle{
+    display: inline-block;
+    background-color: #BAD3FF;
+    width: 60px;
+    height: 40px;
+    margin-left: -15px;
+}
+.html-rate-middle a{
+    text-align: middle;
+}
+
+.html-rate-right{
+    display: inline-block;
+    margin-left: -15px;
+    background-color: #BAD3FF;
+    width: 20px;
+    height: 40px;
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+/*Graph for css*/
+.css-rate{
+    display: inline-block;
+    margin-left: 80px;
+    margin-top: 30px;
+    background-color: #77F9C3;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.fadein {
+    opacity: 0;
+    animation: fadein 6s ease forwards;
+}
+@keyframes fadein {
+    100% {  opacity: 1;}
+}
+
+.css-rate-parent {
+    display: inline-block;
+    animation-delay: 4s;
+}
+.css-rate-left{
+    display: inline-block;
+    background-color: #77F9C3;
+    width: 20px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 300px;
+}
+.css-rate-middle{
+    display: inline-block;
+    background-color: #77F9C3;
+    width: 60px;
+    height: 40px;
+    margin-left: -15px;
+}
+.css-rate-right{
+    display: inline-block;
+    margin-left: -15px;
+    background-color: #77F9C3;
+    width: 20px;
+    height: 40px;
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+
+/*sample graph*/
+.sample-graph {
+    margin-top: 30px;
+    margin-left: 440px;
+    background-color: #FFBEDA;
+    width: 120px;
+    height: 40px;
+    border-radius: 0%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.sample-graph p {
+    line-height: 40px;
+}
+
+/*Skills Body*/
+.skills-body{
+    margin: 60px 300px;
+}
+
+/*Works*/
+#works{
     margin-top: 30px;
 }
 
-.clearfix::after {
-    content: "";
-    display: block;
-    clear: both;
+.w-paragraph{
+    margin-left: 380px;    
 }
 
-h2{
-    padding: 30px;
-    margin-left: 250px;
-    /*margin-top: 100px;*/
-    color: darkgrey;
-    font-size: 30px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    clear:left;
-}
-.left{
-    margin-left: 468px;
-    width: auto;
-    height: auto;
-    float: left;
-    text-align: center;
-}
-
-.pic {
-    display: block;
-    text-align: center; 
-    padding: 30px;               
-}
-.image-vw{
-    width: 5vw;
-    padding: 20px;
-    display: inline-block;
-}
 .w-pic {
     position: relative;
     display: block;
     text-align: center; 
-    padding: 30px;
     /*overflow: visible;*/               
 }
 
 .image-vw-2{
+    padding-bottom: 5px;
     width: 20vw;
     padding: 20px;
     display: inline-block;
@@ -176,10 +361,42 @@ h2{
     margin:0;
     padding:0;
 }
+
+/*Contactボタン*/
 .contact {
     position: absolute;
     text-align: center;
 }
+
+.btn
+{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.contact-btn {
+    font-size: 17px;
+    display: inline-block;
+    padding: 1em 4em;
+    color: darkgray;
+    border: solid 2px #064E0F;
+    border-radius: 50px;
+    transition: .4s;
+    background: white;
+}
+
+.contact-btn:hover{
+    background: #064E0F;
+    color:white;
+}
+
+/*TOP ボタン*/
 #page-top {
     position: fixed;
     bottom: 20px;
@@ -209,34 +426,24 @@ h2{
 
 }
 
-.btn
-{
-    text-align: center;
+/*footer*/
+#footer {
+    width:100%;
+    padding: 3px 0;
+    background: rgb(255, 219, 201);
 }
 
-.clearfix:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.contact-btn {
-    font-size: 17px;
-    display: inline-block;
-    padding: 1em 4em;
-    color: darkgray;
-    border: solid 2px #064E0F;
-    border-radius: 50px;
-    transition: .4s;
-    background: white;
-}
-
-.contact-btn:hover{
-    background: #064E0F;
-    color:white;
+#footer p {
+    text-align: right;
+    padding-right: 30px;
+    color: black;
 }
 
 /*Contact Page*/
+#contact {
+    padding-top: 40px;
+
+}
 form {
     width: 600px;
     margin: 0 auto;

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>portfolio</title>
         <link rel="stylesheet" href="style.css">
-        <script src="jquery-3.5.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="anime.min.js"></script>
     </head>
     
@@ -18,40 +18,92 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </header>
-            <h1>AAAAAAAAA</h1>
-
-        </div>            
+            <h1 id="h1">Tomomi Takaoka</h1>
+        </div>
         <div class="wrap">
             <div class="circle" id="elem"></div>
-            <p id="page-top"><a href="#wrap">Back to Top</a></p>
-        </div>
-
+        </div>            
         <div id="profile" class="clearfix">
             <h2>Profile</h2>
-            <img class="left" src="images/profile.png" alt="profile pic" />
-            <p>
-                About me...............<br>
-                about me
-            </p>
+            <div class="content">
+                <img class="left clearfix" src="images/profile.png" alt="profile pic" />
+                <div class="body">
+                    <p>高丘朋実　-Takaoka Tomomi-</p>
+                    <p>
+                        福岡県出身。大学では情報工学を専攻し、卒業後はIT企業にてネットワークエンジニアとして勤務。
+                        国内外問わず、様々なネットワークを設計、構築を担当した後に退職。
+                        その後ロンドンに渡り、日系企業に就職したが、コロナを機に退職し帰国。<br>
+                        この時に、場所や環境に囚われず
+                        働けるスキルが必要だと思い、Webエンジニアになるため勉強を開始。
+                    </p>
+                </div>
+            </div>
+            <div class="policy">
+                <p>Policy</p>
+                <ul>
+                    <li>クライアント様の思いを形にするため、スキルを習得し続けます</li>
+                    <li>楽しくかっこよく働きます</li>
+                    <li>どんなことにもチャレンジし続けます</li>
+                </ul>
+                <p>
+                    Webエンジニアに関するスキルはまだまだ未熟ですが、
+                    前職や今までの経験から、楽しく取り組むスキルを習得しました。<br>
+                    クライアント様の思いを形にして、その思いを見た方に伝えられるような作品を制作するために
+                    これからも楽しく学び続けていきます！
+                </p>
+            </div>
         </div>
             
-            
-        <div class="circle2" class="clearfix">
+        
+        <div class="circle2 clearfix">
             <div class="circle2-left"></div>
             <div class="circle2-middle" id="elem2"></div>
-            <div class="circle2-right" id="elem2.5"></div>
+            <div class="circle2-right" id="elem3"></div>
         </div>
+        
+        
         <div id="skills" class="clearfix">
             <h2>Skills</h2>
-                <div class="pic">
-                    <img src="images/html.JPG" alt="html" class="image-vw"/>
-                    <img src="images/css.JPG" alt="css"  class="image-vw"/>
-                    <img src="images/js.JPG" alt="js"  class="image-vw"/>
+            <div class="wrapper">
+                <div class="graph">
+                    <div class="html-rate" id="elem-html"></div>
+                    
+                    <div class="html-rate-parent">
+                        <div class="html-rate-left fadein"></div>
+                        <div class="html-rate-middle fadein" id="elem2-html"></div>
+                        <div class="html-rate-right fadein" id="elem3-html"></div>
+                   </div>
                 </div>
+                <div class="graph">
+                    <div class="css-rate" id="elem-css"></div>
+                    
+                    <div class="css-rate-parent">
+                        <div class="css-rate-left fadein"></div>
+                        <div class="css-rate-middle fadein" id="elem2-css"></div>
+                        <div class="css-rate-right fadein" id="elem3-css"></div>
+                    </div>
+                </div>
+                <div class="sample-graph"><p>Javascript</p></div>
+                <div class="sample-graph"><p>jQuery</p></div>
+                <div class="sample-graph"><p>PHP</p></div>
+                <p class="skills-body">
+                    ※今後内容は変更します<br>
+                    本サイトはHTML、CSS、Javascriptを用いて作成しており、基礎は習得しています。
+                    今後は応用スキルを習得する！実務で使用していく！という目標を込めてのパーセントとしております。<br>
+                    またバックエンド言語としてはPHPを習得していきます。 <br>
+                    フロントからバックエンドまで対応できるようになることが目標です。
+                </p>
+            </div>
         </div>
+
         
         <div id="works">
             <h2>Works</h2>
+            <div class="w-paragraph">
+                <p>
+                    今後、制作したサイトを更新していく予定です。
+                </p>
+            </div>
             <div class="w-pic">
                 <img src="images/work.JPG" alt="work" class="image-vw-2" />
                 <p>Coming Soon</p>
@@ -69,24 +121,121 @@
             </div>
         </div>
         
+        <div id="footer">
+            <p>Tomomi Takaoka</p>
+        </div>
+
         <script>
-            //ヘッダーを固定する
-           /* var _wondow = $(window),
-                _header =$('#nav'),
-                nemeBottom;
+        /*global $*/
+        /*global anime*/
+
+            //H１が表示される
+            let moji = $('#h1').text();
+            $('#h1').html();
             
-            _wondow.on('scroll', function() {
-                nameBottom =$('#name').height();
-                if(_window.scrollTop() > nameBottom){
-                    _header.addClass('fixed');
-                }else{
-                    _header.removeClass('fixed');
+            let count = 0;
+            
+            const animation = () => {
+                let show_moji = moji.substr(count,1);
+                count++;
+                
+                let span = $('<span>', {text: show_moji});
+                span.css({"color": "rgb(" + (count*15) + "," + (count*15) + "," + (count * 15)});
+                $('#h1').append(span);
+                
+                span.textContent = moji.substr(0, count);
+                
+                if(count === moji.length){
+                    clearInterval(interval_id);
                 }
-            });*/
+            };
+            const interval_id = setInterval(animation, 1000);
+            
 
+            //スクロールしてボールが転がる
+            let elem = document.getElementById('elem');
+            window.addEventListener('scroll',() => {
+                
+                let scrollTop = document.scrollingElement.scrollTop;
+                anime({
+                    targets: elem,
+                    translateX: scrollTop,
+                    duration: 2000,
+                    loop: false,
+                 });
+            }, 10000);
+            
+           //スクロールしてポールが伸びる
+            let elem2 = document.getElementById('elem2');
+            window.addEventListener('scroll',() => {
+                anime({
+                    targets: elem2,
+                    width: 400,
+                    duration: 8000,
+                    loop: false
+                 });
+            }, true);
+            
+            
+            //スキルグラフ(html)
+            //転がるボール
+            let elemHtml = document.getElementById('elem-html');
+            window.addEventListener('scroll',() => {
+                
+                anime({
+                    targets: elemHtml,
+                    translateX: 350,
+                    duration: 5000,
+                    loop: false,
+                    opacity:0                    
+                 });
+            }, 10000);
+           //スクロールしてポールが伸びる
+           let elemHtml2 = document.getElementById('elem2-html');
+            window.addEventListener('scroll',() => {
+                anime({
+                    opacity:1,
+                    targets: elemHtml2,
+                    width: 300,
+                    duration: 7000,
+                    loop: false
+                 });
+            }, true);
+            
+            //スキルグラフ(css)
+            //転がるボール
+            let elemCss = document.getElementById('elem-css');
+            window.addEventListener('scroll',() => {
+                
+                anime({
+                    targets: elemCss,
+                    translateX: 350,
+                    duration: 5000,
+                    loop: false,
+                    opacity:0                    
+                 });
+            }, 10000);
+           //スクロールしてポールが伸びる
+           let elemCss2 = document.getElementById('elem2-css');
+            window.addEventListener('scroll',() => {
+                anime({
+                    opacity:1,
+                    targets: elemCss2,
+                    width: 200,
+                    duration: 7000,
+                    loop: false
+                 });
+            }, true);
+            
 
+            
+            //問い合わせボタン
+            $('[type="button').click(() => {
+                    
+            });
+    
             //スクロールしてTopボタンを表示
-            $(function(){
+            /*$(function(){
                 var topbtn = $('#page-top');
                 topbtn.hide();
                 //スクロースするとボタンを表示
@@ -104,53 +253,8 @@
                     }, 500);
                     return false;
                 });
-            });    
+            });    */
             
-           //H１が表示される
-            $(function(){
-                var h1 = $('h1');
-                var txt_array=h1.text().split('');
-                $('h1').html('');
-
-                $.each(txt_array, function(index, element){
-                    var new_element = $("<span/>").text(element).css({opacity:0});
-                    h1.append(new_element);
-                    new_element.delay(index * 100);
-                    new_element.animate({opacity: 1}, 3000);
-                });
-            });
-            
-            //スクロールしてボールが転がる
-           var elem = document.getElementById('elem');
-            window.addEventListener('scroll',() => {
-                
-                let scrollTop = document.scrollingElement.scrollTop;
-                anime({
-                    targets: elem,
-                    translateX: scrollTop,
-                    duration: 2000,
-                    loop: false
-                 });
-            }, true);
-            
-           //スクロールしてポールが伸びる
-           var elem2 = document.getElementById('elem2');
-            window.addEventListener('scroll',() => {
-                
-            let scrollTop2 = document.scrollingElement.scrollTop;
-                anime({
-                    targets: elem2,
-                    width: 400,
-                    duration: 8000,
-                    loop: false
-                 });
-            }, true);
-            
-            
-            //問い合わせボタン
-            $('[type="button').click(() => {
-                    
-            });
         </script>
     </body>
 </html>
