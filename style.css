@@ -50,7 +50,7 @@ html, body {
     margin: 20px;
     padding: 10px;
     color: darkgray;
-    font-size: 14px;
+    font-size: 17px;
     text-decoration: none;
 }
 #nav ul li a:hover{
@@ -61,18 +61,21 @@ html, body {
 /*nameの表示*/
 #name{
     width: auto;
-    height: 200px;
+    height: 500px;
     overflow: hidden;
+    
 }
 
 h1 {
-    margin: 100px;
-    margin-top: 160px;
+    margin: 250px;
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
 } 
+
+p{
+    font-size: 17.5px;
+}
 
 /*animation 1*/
 .wrap {
@@ -80,7 +83,7 @@ h1 {
 }
 
 .circle{
-    margin-top: 150px;
+    margin-top: 40px;
     background-color: #FFBEDA;
     width: 40px;
     height: 40px;
@@ -94,11 +97,10 @@ h1 {
 
 /*各コンテンツのフォント*/
 h2{
-    margin-top: px;
     padding-top: 40px;
     margin-left: 250px;
     color: darkgrey;
-    font-size: 30px;
+    font-size: 40px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     clear:left;
 }
@@ -139,9 +141,12 @@ h2{
 }
 .policy p:first-child {
     margin-left: 50px;
-    font-size: 23px;
+    font-size: 35px;
     color: darkgray;        
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.policy ul li {
+    font-size: 17.5px;
 }
 
 
@@ -235,10 +240,6 @@ h2{
     height: 40px;
     margin-left: -15px;
 }
-.html-rate-middle a{
-    text-align: middle;
-}
-
 .html-rate-right{
     display: inline-block;
     margin-left: -15px;
