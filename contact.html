@@ -12,24 +12,37 @@
         </style>
     </head>
     <body>
-        <div id="nav">            
-            <ul>
-                <li><a href="index_r2.html#profile">Profile</a></li>
-                <li><a href="index_r2.html#skills">Skills</a></li>
-                <li><a href="index_r2.html#works">Works</a></li>
-                <li><a href="#contact.html">Contact</a></li>
-            </ul>
-        </div>
+        <header>
+            <div class="pc-nav">            
+                <ul>
+                    <li><a href="index_responsive.html#profile">Profile</a></li>
+                    <li><a href="index_responsive.html#skills">Skills</a></li>                    
+                    <li><a href="index_responsive.html#works">Works</a></li>
+                </ul>
+            </div>
+            <div class="mobile-nav-category">
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li class="close"><span>Close</span></li>
+                </ul>
+            </div>
+            <div id="mobile-nav">
+                <span></span>
+            </div>
+        </header>
         <div id="contact">
             <h2>Contact</h2>
             <form>
                 <div class="item">
-                    <label class="label">Name</label>
+                    <label class="label">お名前</label>
                     <input class="input" type="text" name="name"/>
                 </div>
                 
                 <div class="item">
-                    <label class="label">Email address</label>
+                    <label class="label">メールアドレス</label>
                     <input class="input" type="text" name="email"/>
                 </div>
                 
@@ -39,12 +52,12 @@
                 </div>
                 
                 <div class="btn">
-                    <button class="sent" type="submit">Submit</button> 
+                    <button class="send" type="submit">Submit</button> 
                 </div>
             </form>
         </div>
         <div class="btn-2">
-            <button type="button" class="btn-to-top" onclick="location.href='index_r2.html'">Back</button>
+            <button type="button" class="btn-to-top" onclick="location.href='index_responsive.html'">Back</button>
         </div>
         <div id="footer">
             <p>Tomomi Takaoka</p>
